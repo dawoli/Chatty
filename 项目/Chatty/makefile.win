@@ -1,0 +1,37 @@
+# Project: Chatty
+# Makefile created by Red Panda C++ 3.2.2958
+
+CXX      = "g++.exe"
+CC       = "gcc.exe"
+WINDRES  = "windres.exe"
+RM       = del /q /f
+CD       = cd /d
+LIBS     = "-m64" "-pg" "-Wl,--stack,1073741824" "-s" "-static"
+INCS     = 
+CXXINCS  = 
+CXXFLAGS = $(CXXINCS) "-pedantic" "-g3" "-O2" "-std=c++2b" "-pipe" "-Wall" "-Wextra" "-D_DEBUG"
+CFLAGS   = $(INCS) "-std=c17" "-pedantic" "-g3" "-O2" "-pipe" "-Wall" "-Wextra" "-D_DEBUG"
+WINDRESFLAGS = 
+RES      = Chatty_private.res
+OBJ      = Chatty.o $(RES)
+BIN      = Chatty.exe
+LINKOBJ  = "Chatty.o" "Chatty_private.res"
+CLEANOBJ = "Chatty.o" "Chatty_private.res" "Chatty.exe"
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	-$(RM) $(CLEANOBJ) >NUL 2>&1
+
+Chatty.exe: $(OBJ)
+
+	$(CXX) $(LINKOBJ) -o "Chatty.exe" $(LIBS)
+
+Chatty.o: Chatty.cpp
+	$(CXX) -c "Chatty.cpp" -o "Chatty.o" $(CXXFLAGS) 
+
+Chatty_private.res: Chatty_private.rc 
+	$(WINDRES) -i "Chatty_private.rc" --input-format=rc -o "Chatty_private.res" -O coff $(WINDRESFLAGS) 
+
