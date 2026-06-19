@@ -1,0 +1,11 @@
+TITLE=
+NAME=sticks
+RUN=
+INFILESUFFIX=in
+ANSFILESUFFIX=ans
+PLUG=mlss_filterspace_e
+TYPE=SOURCE
+LIMIT=1
+MEMLIMITS=512
+SAMPLES=10
+CCL=cpp@g++ -o %o %i ‐O2 ‐std=c++14 ‐static

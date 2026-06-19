@@ -1,0 +1,11 @@
+#!/bin/bash
+
+g++ **.cpp -o **
+
+for i in {1..2}
+do
+    cp **$
+    **${i}
+done
+
+chmod testrun.sh

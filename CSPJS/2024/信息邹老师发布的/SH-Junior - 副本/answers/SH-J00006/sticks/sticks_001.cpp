@@ -1,0 +1,106 @@
+#include<bits/stdc++.h>
+using namespace std;
+int stick[]={0,2,5,100006,4,100006,6,3,7,100006};
+long long f[100005];
+int main()
+{
+	freopen("sticks.in","r",stdin);
+	freopen("sticks.out","w",stdout);
+	int t,n;
+	scanf("%d",&t);
+	for(int i=1;i<=t;i++)
+	{
+		scanf("%d",&n);
+		if(n%7==0&&n>=7)
+		{
+			while(n>0)
+			{
+				n-=7;
+				printf("8");
+			}
+			printf("\n");
+			continue;
+		}
+		if(n%7==1&&n>=8)
+		{
+			printf("10");
+			n-=8;
+			while(n>1)
+			{
+				n-=7;
+				printf("8");
+			}
+			printf("\n");
+			continue;
+		}
+		if(n%7==2&&n>=2)
+		{
+			printf("1");
+			n-=2;
+			while(n>1)
+			{
+				n-=7;
+				printf("8");
+			}
+			printf("\n");
+			continue;
+		}
+		if(n%7==3&&n>=10)
+		{
+			printf("22");
+			n-=10;
+			while(n>1)
+			{
+				n-=7;
+				printf("8");
+			}
+			printf("\n");
+			continue;
+		}
+		if(n%7==4&&n>=11)
+		{
+			printf("20");
+			n-=11;
+			while(n>1)
+			{
+				n-=7;
+				printf("8");
+			}
+			printf("\n");
+			continue;
+		}
+		if(n%7==5&&n>=5)
+		{
+			printf("2");
+			n-=5;
+			while(n>1)
+			{
+				n-=7;
+				printf("8");
+			}
+			printf("\n");
+			continue;
+		}
+		if(n%7==6&&n>=6)
+		{
+			printf("6");
+			n-=6;
+			while(n>1)
+			{
+				n-=7;
+				printf("8");
+			}
+			printf("\n");
+			continue;
+		}
+		if(n==1)
+			printf("-1\n");
+		else if(n==3)
+			printf("7\n");
+		else if(n==4)
+			printf("4\n"); 
+	}
+	fclose(stdin);
+	fclose(stdout);
+	return 0;
+}

@@ -1,0 +1,17 @@
+
+  CompileFlags:
+    # Treat code as C++, use C++17 standard, enable more warnings.
+    Add: [-fdiagnostics-color=always, -pedantic, -g3, -O2, -std=c++14, -pipe, -Wall, -Wextra, -D_DEBUG, -m64, -pg, -Wl,--stack,1073741824, -static,-I/other/headers,D:\C++\RedPanda.C++\mingw64\lib\gcc\x86_64-w64-mingw32\11.4.0\include\c++]
+    # Remove extra warnings specified in compile commands.
+    # Single value is also acceptable, same as "Remove: [-mabi]"
+    Remove: -mabi
+    Compiler: g++
+  Diagnostics:
+    # Tweak Clang-Tidy checks.
+    ClangTidy:
+      Add: [performance*, modernize*, readability*]
+      Remove: [modernize-use-trailing-return-type]
+      CheckOptions:
+        readability-identifier-naming.VariableCase: CamelCase
+  Index:
+    StandardLibrary: true

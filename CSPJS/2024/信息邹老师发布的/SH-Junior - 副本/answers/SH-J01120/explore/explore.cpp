@@ -1,0 +1,80 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long i,t,j,z;
+int main()
+{
+	freopen("explore.in","r",stdin);
+	freopen("explore.out","w",stdout);
+	cin>>t;
+	for(i=1;i<=t;i++)
+	{
+		long long s=1,n=0,m=0,k=0,x=0,y=0,d=0,a[1111][1111]={};
+		cin>>n>>m>>k>>x>>y>>d;
+		for(j=1;j<=n;j++)
+		for(z=1;z<=m;z++)
+		{
+			char w;
+			cin>>w;
+			if(w=='.')
+			a[j][z]=1;
+		}
+		a[x][y]=2;
+		for(j=1;j<=k;j++)
+		{
+			if(d==0)
+			if(a[x][y+1]==0)
+			d=(d+1)%4;
+			else
+			{
+			y++;
+			if(a[x][y]==1)
+			{
+				s++;
+				a[x][y]=2;
+			}	
+			}
+			else
+			if(d==1)
+			if(a[x+1][y]==0)
+			d=(d+1)%4;
+			else
+			{
+			x++;
+			if(a[x][y]==1)
+			{
+				s++;
+				a[x][y]=2;
+			}	
+			}
+			else
+			if(d==2)
+			if(a[x][y-1]==0)
+			d=(d+1)%4;
+			else
+			{
+			y--;
+			if(a[x][y]==1)
+			{
+				s++;
+				a[x][y]=2;
+			}	
+			}
+			else
+			{
+			if(a[x-1][y]==0)
+			d=(d+1)%4;
+			else
+			{
+			x--;
+			if(a[x][y]==1)
+			{
+				s++;
+				a[x][y]=2;
+			}	
+			}	
+			}
+		}
+		cout<<s<<endl;
+	}
+	return 0;
+}

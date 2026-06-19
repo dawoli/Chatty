@@ -1,0 +1,17 @@
+TITLE=
+NAME=chain
+RUN=
+INFILESUFFIX=in
+ANSFILESUFFIX=ans
+PLUG=mlss_filterspace_e
+TYPE=SOURCE
+LIMIT=2
+MEMLIMITS=512
+SAMPLES=6
+CCL=cpp@g++ -o %o %i ‐O2 ‐std=c++14 ‐static
+MARK=1@16
+MARK=2@16
+MARK=3@16
+MARK=4@16
+MARK=5@16
+MARK=6@16

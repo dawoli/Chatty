@@ -1,0 +1,15 @@
+{
+    "breakpoints": [
+        {
+            "breakpoint_type": 0,
+            "condition": "",
+            "enabled": true,
+            "filename": "space_invaders.c",
+            "line": 156,
+            "timestamp": "1757749992724"
+        }
+    ],
+    "timestamp": "1757750004901",
+    "watchvars": [
+    ]
+}

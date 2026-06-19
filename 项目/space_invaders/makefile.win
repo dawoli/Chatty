@@ -1,0 +1,37 @@
+# Project: space_invaders
+# Makefile created by Red Panda C++ 3.2.2958
+
+CXX      = "g++.exe"
+CC       = "gcc.exe"
+WINDRES  = "windres.exe"
+RM       = del /q /f
+CD       = cd /d
+LIBS     = "-m64" "-pg" "-Wl,--stack,1073741824" "-static"
+INCS     = 
+CXXINCS  = 
+CXXFLAGS = $(CXXINCS) "-pedantic" "-g3" "-O2" "-std=c++2b" "-pipe" "-Wall" "-Wextra" "-D_DEBUG"
+CFLAGS   = $(INCS) "-std=c17" "-pedantic" "-g3" "-O2" "-pipe" "-Wall" "-Wextra" "-D_DEBUG"
+WINDRESFLAGS = 
+RES      = space_invaders_private.res
+OBJ      = space_invaders.o $(RES)
+BIN      = space_invaders.exe
+LINKOBJ  = "space_invaders.o" "space_invaders_private.res"
+CLEANOBJ = "space_invaders.o" "space_invaders_private.res" "space_invaders.exe"
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	-$(RM) $(CLEANOBJ) >NUL 2>&1
+
+space_invaders.exe: $(OBJ)
+
+	$(CXX) $(LINKOBJ) -o "space_invaders.exe" $(LIBS)
+
+space_invaders.o: space_invaders.c
+	$(CC) -c "space_invaders.c" -o "space_invaders.o" $(CFLAGS) 
+
+space_invaders_private.res: space_invaders_private.rc 
+	$(WINDRES) -i "space_invaders_private.rc" --input-format=rc -o "space_invaders_private.res" -O coff $(WINDRESFLAGS) 
+

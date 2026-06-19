@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\\u7F16\u7A0B\\C\u002B\u002B\\\u6A21\u677F\u9879\u76EE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\\u7F16\u7A0B\\C\u002B\u002B\\\u6D1B\u8C37\\P11855 [CSP-J2022 \u5C71\u4E1C] \u90E8\u7F72\\P11855 [CSP-J2022 \u5C71\u4E1C] \u90E8\u7F72\uFF08\u624B\u5199\uFF09.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "P11855 [CSP-J2022 \u5C71\u4E1C] \u90E8\u7F72\uFF08\u624B\u5199\uFF09.cpp",
+              "DocumentMoniker": "E:\\\u7F16\u7A0B\\C\u002B\u002B\\\u6D1B\u8C37\\P11855 [CSP-J2022 \u5C71\u4E1C] \u90E8\u7F72\\P11855 [CSP-J2022 \u5C71\u4E1C] \u90E8\u7F72\uFF08\u624B\u5199\uFF09.cpp",
+              "RelativeDocumentMoniker": "..\\\u6D1B\u8C37\\P11855 [CSP-J2022 \u5C71\u4E1C] \u90E8\u7F72\\P11855 [CSP-J2022 \u5C71\u4E1C] \u90E8\u7F72\uFF08\u624B\u5199\uFF09.cpp",
+              "ToolTip": "E:\\\u7F16\u7A0B\\C\u002B\u002B\\\u6D1B\u8C37\\P11855 [CSP-J2022 \u5C71\u4E1C] \u90E8\u7F72\\P11855 [CSP-J2022 \u5C71\u4E1C] \u90E8\u7F72\uFF08\u624B\u5199\uFF09.cpp",
+              "RelativeToolTip": "..\\\u6D1B\u8C37\\P11855 [CSP-J2022 \u5C71\u4E1C] \u90E8\u7F72\\P11855 [CSP-J2022 \u5C71\u4E1C] \u90E8\u7F72\uFF08\u624B\u5199\uFF09.cpp",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAABsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-01T12:59:46.633Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

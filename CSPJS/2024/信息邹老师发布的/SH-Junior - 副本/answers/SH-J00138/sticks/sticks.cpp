@@ -1,0 +1,76 @@
+#include<bits/stdc++.h>
+using namespace std;
+int T,asw,n;
+int main(){
+	freopen("sticks1.in","r",stdin);
+	freopen("sticks1.out","w",stdout);
+	cin>>T;
+	for(int i=0;i<T;i++){
+		cin>>n;
+		if(n==1){
+			cout<<"-1"<<endl;
+			continue;
+		}
+		if(n==2){
+			cout<<"1"<<endl;
+			continue;
+		}
+		if(n==3){
+			cout<<"7"<<endl;
+			continue;
+		}
+		if(n==4){
+			cout<<"4"<<endl;
+			continue;
+		}
+		if(n==5){
+			cout<<"2"<<endl;
+			continue;
+		}
+		if(n==6){
+			cout<<"6"<<endl;
+			continue;
+		}
+		if(n==7){
+			cout<<"8"<<endl;
+			continue;
+		}
+		int m7=n%7;
+		if(m7==1){
+			cout<<"10";
+			n-=8;
+		}
+		if(m7==2){
+			cout<<"1";
+			n-=2;
+		}
+		if(m7==3){
+			if(n==10){
+				cout<<"33"<<endl;
+				continue;
+			}
+			else{
+				cout<<"200";
+				n-=17;
+			}
+		}
+		if(m7==4){
+			cout<<"20";
+			n-=11;
+		}
+		if(m7==5){
+			cout<<"2";
+			n-=5;
+		}
+		if(m7==6){
+			cout<<"80";
+			n-=13;
+		}
+		while(n>0){
+			n-=7;
+			cout<<"8";
+		}
+		cout<<endl;
+	}
+	return 0;
+}

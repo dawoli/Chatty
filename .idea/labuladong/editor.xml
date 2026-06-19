@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditorlabuladong">
+    <option name="projectConfig">
+      <map>
+        <entry key="$PROJECT_DIR$/LeetCode/leetcode/editor/cn/[208]实现 Trie (前缀树).cpp">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/LeetCode/leetcode/editor/cn/doc/content/[208]实现 Trie (前缀树).md" />
+              <option name="frontendQuestionId" value="leetcode.cn208" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/LeetCode/leetcode/editor/cn/[208]实现 Trie (前缀树).cpp" />
+              <option name="titleSlug" value="implement-trie-prefix-tree" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/LeetCode/leetcode/editor/cn/[28]找出字符串中第一个匹配项的下标.cpp">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/LeetCode/leetcode/editor/cn/doc/content/[28]找出字符串中第一个匹配项的下标.md" />
+              <option name="frontendQuestionId" value="leetcode.cn28" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/LeetCode/leetcode/editor/cn/[28]找出字符串中第一个匹配项的下标.cpp" />
+              <option name="titleSlug" value="find-the-index-of-the-first-occurrence-in-a-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/LeetCode/leetcode/editor/cn/[3190]使所有元素都可以被 3 整除的最少操作数.cpp">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/LeetCode/leetcode/editor/cn/doc/content/[3190]使所有元素都可以被 3 整除的最少操作数.md" />
+              <option name="frontendQuestionId" value="leetcode.cn3190" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/LeetCode/leetcode/editor/cn/[3190]使所有元素都可以被 3 整除的最少操作数.cpp" />
+              <option name="titleSlug" value="find-minimum-operations-to-make-all-elements-divisible-by-three" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/LeetCode/leetcode/editor/cn/[3407]子字符串匹配模式.cpp">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/LeetCode/leetcode/editor/cn/doc/content/[3407]子字符串匹配模式.md" />
+              <option name="frontendQuestionId" value="leetcode.cn3407" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/LeetCode/leetcode/editor/cn/[3407]子字符串匹配模式.cpp" />
+              <option name="titleSlug" value="substring-matching-pattern" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

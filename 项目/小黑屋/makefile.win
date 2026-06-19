@@ -1,0 +1,37 @@
+# Project: 小黑屋
+# Makefile created by Red Panda C++ 3.2.2958
+
+CXX      = "g++.exe"
+CC       = "gcc.exe"
+WINDRES  = "windres.exe"
+RM       = del /q /f
+CD       = cd /d
+LIBS     = "-m64" "-pg" "-Wl,--stack,1073741824" "-static"
+INCS     = 
+CXXINCS  = 
+CXXFLAGS = $(CXXINCS) "-pedantic" "-g3" "-O2" "-std=c++2b" "-pipe" "-Wall" "-Wextra" "-D_DEBUG"
+CFLAGS   = $(INCS) "-std=c17" "-pedantic" "-g3" "-O2" "-pipe" "-Wall" "-Wextra" "-D_DEBUG"
+WINDRESFLAGS = 
+RES      = 小黑屋_private.res
+OBJ      = black_house.o $(RES)
+BIN      = 小黑屋.exe
+LINKOBJ  = "black_house.o" "小黑屋_private.res"
+CLEANOBJ = "black_house.o" "小黑屋_private.res" "小黑屋.exe"
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	-$(RM) $(CLEANOBJ) >NUL 2>&1
+
+小黑屋.exe: $(OBJ)
+
+	$(CXX) $(LINKOBJ) -o "小黑屋.exe" $(LIBS)
+
+black_house.o: black_house.cpp
+	$(CXX) -c "black_house.cpp" -o "black_house.o" $(CXXFLAGS) 
+
+小黑屋_private.res: 小黑屋_private.rc 
+	$(WINDRES) -i "小黑屋_private.rc" --input-format=rc -o "小黑屋_private.res" -O coff $(WINDRESFLAGS) 
+

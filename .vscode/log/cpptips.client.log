@@ -1,0 +1,340 @@
+[2026-02-23T10:45:41.819] [DEBUG] cpptips - needLoadDir: []
+[2026-02-23T10:45:41.820] [DEBUG] cpptips - needLoadLinkDir: []
+[2026-02-23T10:45:43.672] [DEBUG] cpptips - 回调消息： [
+  {
+    text: 'ACMX',
+    data: '1',
+    state: { opened: false, checked: true },
+    children: [ [Object] ]
+  },
+  {
+    text: 'C++ Primer 第五版',
+    data: '0',
+    state: { opened: false, checked: true },
+    children: [ [Object] ]
+  },
+  {
+    text: 'cmake-build-release',
+    data: '0',
+    state: { opened: false, checked: true },
+    children: [ [Object] ]
+  },
+  {
+    text: 'CSPJS',
+    data: '21428',
+    state: { opened: false, checked: true },
+    children: [ [Object], [Object] ]
+  },
+  {
+    text: 'g',
+    data: '4',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: 'Houston',
+    data: '0',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: 'latex',
+    data: '0',
+    state: { opened: false, checked: true },
+    children: [ [Object] ]
+  },
+  {
+    text: 'LeetCode',
+    data: '2',
+    state: { opened: false, checked: true },
+    children: [ [Object] ]
+  },
+  {
+    text: 'LibreOJ',
+    data: '1',
+    state: { opened: false, checked: true },
+    children: [ [Object] ]
+  },
+  {
+    text: 'MarsOJ',
+    data: '249',
+    state: { opened: false, checked: true },
+    children: [ [Object] ]
+  },
+  {
+    text: 'YACS',
+    data: '6',
+    state: { opened: false, checked: true },
+    children: [ [Object], [Object] ]
+  },
+  {
+    text: '乐动创想',
+    data: '0',
+    state: { opened: false, checked: true },
+    children: [ [Object] ]
+  },
+  {
+    text: '书籍',
+    data: '0',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '二维数组',
+    data: '4',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '全国青少年信息素养大赛',
+    data: '5',
+    state: { opened: false, checked: true },
+    children: [ [Object] ]
+  },
+  {
+    text: '函数',
+    data: '18',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '四年级下',
+    data: '2',
+    state: { opened: false, checked: true },
+    children: [ [Object] ]
+  },
+  {
+    text: '图形打印',
+    data: '40',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '字符串',
+    data: '2',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '总结',
+    data: '0',
+    state: { opened: false, checked: true },
+    children: [ [Object] ]
+  },
+  {
+    text: '手动图形打印',
+    data: '4',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '指针',
+    data: '1',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '排序',
+    data: '8',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '教孩子学编程_源代码',
+    data: '0',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '数组',
+    data: '4',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '有道小图灵',
+    data: '0',
+    state: { opened: false, checked: true },
+    children: [ [Object], [Object] ]
+  },
+  {
+    text: '杂七杂八',
+    data: '18',
+    state: { opened: false, checked: true },
+    children: [ [Object] ]
+  },
+  {
+    text: '模板项目',
+    data: '1',
+    state: { opened: false, checked: true },
+    children: [ [Object], [Object] ]
+  },
+  {
+    text: '歌曲',
+    data: '1',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '洛谷',
+    data: '98',
+    state: { opened: false, checked: true },
+    children: [
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object]
+    ]
+  },
+  {
+    text: '洛谷深入浅出',
+    data: '0',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '深搜',
+    data: '0',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '童程童美',
+    data: '78',
+    state: { opened: false, checked: true },
+    children: [ [Object], [Object], [Object] ]
+  },
+  {
+    text: '类和对象',
+    data: '9',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '蓝桥等考',
+    data: '6',
+    state: { opened: false, checked: true },
+    children: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object]
+    ]
+  },
+  {
+    text: '输入输出',
+    data: '3',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '进制转换',
+    data: '5',
+    state: { opened: false, checked: true },
+    children: []
+  },
+  {
+    text: '陈振',
+    data: '4',
+    state: { opened: false, checked: true },
+    children: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
+  },
+  {
+    text: '项目',
+    data: '9',
+    state: { opened: false, checked: true },
+    children: [ [Object], [Object], [Object], [Object], [Object], [Object] ]
+  },
+  {
+    text: '马强老师2025公益CSP语法基础线上课',
+    data: '250',
+    state: { opened: false, checked: true },
+    children: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ]
+  },
+  {
+    text: '高精度算法',
+    data: '8',
+    state: { opened: false, checked: true },
+    children: []
+  }
+]
+[2026-02-23T10:45:43.675] [DEBUG] cpptips - {
+  needLoadLinkDir: [],
+  needLoadDir: [],
+  ignorDir: [],
+  ignoreFileAndDir: [
+    '^[.~]{1,1}[.]{1,128}$',
+    '^.*_tools_pb\\.(cpp|h)$',
+    '^.*testimpl_pb\\.(cpp|h)$',
+    '^.*\\.pb\\.(cc|h)$',
+    '^(sk_|sm_)[a-z0-9_.]{1,128}$',
+    '^mm3rd$',
+    '^lib32$',
+    '^lib64$',
+    '^lib64_debug$',
+    '^lib64_release$',
+    '^lib32_debug$',
+    '^lib32_release$',
+    '^debug$',
+    '^release$',
+    '^win32$',
+    '^bin$',
+    '^\\.svn$',
+    '^\\.git$',
+    '^\\.vscode$',
+    '^build64_fastbuild$'
+  ],
+  updateCheckIntervalTime: 600000000,
+  defaultbuildscript: 'function GetBuildCommands(hander, dirname, isCommd = true){\n' +
+    '\tlet commids = {\n' +
+    "\t\t'make':'make clean; make -j 8;mv a.out /tmp/;'\n" +
+    '\t};\n' +
+    '\thander.CallBack(0, commids, dirname);\n' +
+    '}',
+  updateCheckUrl: 'http://9.134.38.144:8888',
+  buildParams: ''
+}
+[2026-02-23T10:45:43.675] [DEBUG] cpptips - 回调消息： [
+  '^[.~]{1,1}[.]{1,128}$',
+  '^.*_tools_pb\\.(cpp|h)$',
+  '^.*testimpl_pb\\.(cpp|h)$',
+  '^.*\\.pb\\.(cc|h)$',
+  '^(sk_|sm_)[a-z0-9_.]{1,128}$',
+  '^mm3rd$',
+  '^lib32$',
+  '^lib64$',
+  '^lib64_debug$',
+  '^lib64_release$',
+  '^lib32_debug$',
+  '^lib32_release$',
+  '^debug$',
+  '^release$',
+  '^win32$',
+  '^bin$',
+  '^\\.svn$',
+  '^\\.git$',
+  '^\\.vscode$',
+  '^build64_fastbuild$'
+]

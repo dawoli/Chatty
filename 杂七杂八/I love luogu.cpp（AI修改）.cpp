@@ -1,0 +1,8 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "I love Luogu!" << endl;
+    return 0;
+}

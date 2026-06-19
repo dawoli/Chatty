@@ -1,0 +1,62 @@
+{
+    "configurations": [
+        /*
+        {
+            "type": "command",
+            "name": "CMake Build",
+            "program": "cmake",
+            "args": ["-DCMAKE_BUILD_TYPE=Debug","-G","MinGW Makefiles","-S", "$FILE_DIR$", "-B", "$FILE_DIR$\\cmake-build-debug"],
+        },
+        {
+            "type": "command",
+            "name": "Make",
+            "program": "mingw32-make",
+            "args": ["-C","$FILE_DIR$\\cmake-build-debug"],
+
+        },
+        {
+            "type": "command",
+            "name": "Run",
+            "program": "$FILE_DIR$\\cmake-build-debug\\$FILE_NAME_NO_EXT$.exe",
+        },
+        {
+            "type": "command",
+            "name": "Build And Run",
+            "program": "$FILE_DIR$\\cmake-build-debug\\$FILE_NAME_NO_EXT$.exe",
+            "dependsOn": ["CMake Build", "Make"],
+        },
+        */
+        {
+            "type": "command",
+            "name": "Example Build",
+            "program": "g++",
+            "args": ["$FILE$",
+                "-o",
+                "$FILE_DIR$\\$FILE_NAME_NO_EXT$.exe",
+                "-g",
+                "-pedantic",
+                "-g3",
+                "-O2",
+                "-std=c++14",
+                "-pipe",
+                "-Wall",
+                "-Wextra",
+                "-D_DEBUG",
+                "-m64",
+                "-pg",
+                "-Wl,--stack,1073741824",
+                "-static"]
+        },
+        {
+            "type": "command",
+            "name": "Example Run",
+            "program": "$FILE_DIR$\\$FILE_NAME_NO_EXT$.exe",
+        },
+        {
+            "type": "command",
+            "name": "Example Build And Run",
+            "program": "$FILE_DIR$\\$FILE_NAME_NO_EXT$.exe",
+            "dependsOn": ["Example Build"],
+        },
+    ]
+}

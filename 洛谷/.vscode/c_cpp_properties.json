@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "compilerPath": "D:/C++/RedPanda.C++/mingw64/bin/gcc.exe",
+      "cppStandard": "${default}",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "name": "windows-gcc-x64",
+      "intelliSenseMode": "windows-gcc-x64",
+      "cStandard": "${default}"
+    }
+  ],
+  "version": 4
+}

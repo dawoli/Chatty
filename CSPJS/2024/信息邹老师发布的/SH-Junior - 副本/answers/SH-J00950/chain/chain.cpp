@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std;int main(){freopen("chain.in","r",stdin);freopen("chain.out","w",stdout);int t;int n,k,q;vector<vector<int> >str;int r[100001],c[10001];scanf("%d",&t);while(t--){scanf("%d%d%d",&n,&k,&q);/*int GTX=1;for(int i=1;i<=q;i++){while((str[i][GTX++]=gets())!='\n');};*/;for(int i=1;i<=n;i++){scanf("%d%d",r[i],c[i]);};};srand(time(0));for(int i=1;i<=q;i++){int rnd=rand()%2;printf("%d",rnd);};return 0;}//Bu Hui Zuo,Bai Lan

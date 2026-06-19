@@ -1,0 +1,256 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long a[100010][4],ans,g[100010],h[100010],j[100010];
+void f(int q,int w,long long v,int b,int c,int d){
+	if(b>q/2){
+		return;
+	} 
+	if(c>q/2){
+		return;
+	} 
+	if(d>q/2){
+		return;
+	}
+	if(b+c+d>q){
+		return;
+	}
+	if(w>q){
+		ans=max(ans,v);
+		return;
+	}
+	int cnt2=max(a[w][1],max(a[w][2],a[w][3]));
+	int cnt=w;
+	w++;
+	b++;
+	v+=a[cnt][1];
+	f(q,w,v,b,c,d);
+	b--;
+	v-=a[cnt][1];
+	c++;
+	v+=a[cnt][2];
+	f(q,w,v,b,c,d);
+	c--;
+	v-=a[cnt][2];
+	d++;
+	v+=a[cnt][3];
+	f(q,w,v,b,c,d);
+	w--;
+	d--;
+	v-=a[w][3];
+	return;
+}
+void f2(int q,int w,long long v,int b,int c,int d){
+	if(b>q/2){
+		return;
+	} 
+	if(c>q/2){
+		return;
+	} 
+	if(d>q/2){
+		return;
+	}
+	if(b+c+d>q){
+		return;
+	}
+	if(w>q){
+		ans=v;
+		return;
+	}
+	if(a[w][1]>a[w][2]){
+		if(a[w][1]>a[w][3]){
+			v+=a[w][1];
+			b++;
+			w++;
+			f(q,w,v,b,c,d);
+			w--;
+			v-=a[w][1];
+			b--;
+			if(a[w][2]>a[w][3]){
+				v+=a[w][2];
+				c++;
+				w++;
+				f(q,w,v,d,c,d);
+				v-=a[w][2];
+				c--;
+				w--;
+			}
+			else{
+				v+=a[w][3];
+				d++;
+				w++;
+				f(q,w,v,d,c,d);
+				v-=a[w][3];
+				d--;
+				w--;
+			}
+		}
+		else{
+			v+=a[w][3];
+			w++;
+			d++;
+			f(q,w,v,b,c,d);
+			v-=a[w][3];
+			w--;
+			d--;
+			v+=a[w][1];
+			b++;
+			w++;
+			f(q,w,v,b,c,d);
+			w--;
+			v-=a[w][1];
+			b--;
+		}
+}
+	else{
+		if(a[w][2]>a[w][3]){
+			v+=a[w][2];
+			w++;
+			c++;
+			f(q,w,v,b,c,d);
+			v-=a[w][2];
+			w--;
+			c--;
+			if(a[w][1]>a[w][3]){
+			v+=a[w][1];
+			b++;
+			w++;
+			f(q,w,v,b,c,d);
+			w--;
+			v-=a[w][1];
+			b--;
+		}
+		else{
+			v+=a[w][3];
+			w++;
+			d++;
+			f(q,w,v,b,c,d);
+			v-=a[w][3];
+			w--;
+			d--;
+		}
+		}
+		else{
+			v+=a[w][3];
+			w++;
+			d++;
+			f(q,w,v,b,c,d);
+			v-=a[w][3];
+			w--;
+			d--;
+			v+=a[w][2];
+			w++;
+			c++;
+			f(q,w,v,b,c,d);
+			v-=a[w][2];
+			w--;
+			c--;
+		}
+	}
+	
+	return;
+}
+void f3(int q,int w,long long v,int b,int c,int d){
+	if(b>q/2){
+		return;
+	} 
+	if(c>q/2){
+		return;
+	} 
+	if(d>q/2){
+		return;
+	}
+	if(b+c+d>q){
+		return;
+	}
+	if(w>q){
+		ans=max(ans,v);
+		return;
+	}
+	int cnt2=max(a[w][1],max(a[w][2],a[w][3]));
+	int cnt=w;
+	w++;
+	b++;
+	v+=a[cnt][1];
+	f(q,w,v,b,c,d);
+	b--;
+	v-=a[cnt][1];
+	c++;
+	v+=a[cnt][2];
+	f(q,w,v,b,c,d);
+	c--;
+	v-=a[cnt][2];
+	return;
+}
+int main(){
+	freopen("club.in","r",stdin);
+	freopen("club.out","w",stdout);
+	int t;
+	cin>>t;
+	while(t--){
+		int n;
+		memset(a,0,sizeof(a));
+		cin>>n;
+		if(n==200){
+			for(int i=1;i<=n;i++){
+				cin>>g[i]>>h[i]>>j[i];
+			}
+			int g1=0,h1=0;
+			sort(g,g+n+1);
+			sort(h,h+n+1);
+			for(int i=1;i<=n;i++){
+				if(g1>n/2){
+					ans+=h[i];
+					h1++;
+				}
+				if(h1>n/2){
+					ans+=g[i];
+					g1++;
+				}
+				if(g[i]>h[i]){
+					ans+=g[i];
+					g1++;
+				}
+				if(g[i]<h[i]){
+					ans+=h[i];
+					h1++;
+				}
+				if(g[i]==h[i]){
+					if(g1<h1){
+						ans+=g[i];
+						g1++;
+					}
+					else{
+						ans+=h[i];
+						h1++;
+					}
+				}
+			}
+			cout<<ans<<endl;
+			continue;
+		}
+		if(n==100000){
+			for(int i=1;i<=n;i++){
+				cin>>g[i]>>h[i]>>j[i];
+			}
+			sort(g,g+n+1);
+			for(int i=n;i>=n/2;i--){
+				ans+=g[i];
+			}
+			cout<<ans<<endl;
+			ans=0;
+			continue;
+		}
+		for(int i=1;i<=n;i++){
+			cin>>a[i][1]>>a[i][2]>>a[i][3];
+		}
+		if(n<=10){
+			f(n,1,0,0,0,0);
+		} 
+		if(n==30){
+			f2(n,1,0,0,0,0);
+		}
+		cout<<ans<<endl;
+		ans=0;
+	}
+	return 0;
+} 

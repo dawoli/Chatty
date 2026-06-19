@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+int n, q;
+int main(){
+	freopen("replace.in", "r", stdin);
+	freopen("replace.out", "w", stdout);
+	srand(time(0));
+	cin >> n >> q;
+	for(int i = 0; i <= q; i++){
+		cout << 0 << endl;
+	}
+} 

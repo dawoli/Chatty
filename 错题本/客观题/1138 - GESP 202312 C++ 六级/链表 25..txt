@@ -1,0 +1,3 @@
+https://ti.luogu.com.cn/problemset/1138?submission=1420441
+15.链表
+冒泡排序可以考虑往后排序，不用往前排序

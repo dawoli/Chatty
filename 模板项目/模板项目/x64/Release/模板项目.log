@@ -1,0 +1,16 @@
+﻿  模板项目.cpp
+D:\C++\VisualStudio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1401,5): warning MSB8012: TargetPath(E:\编程\C++\模板项目\x64\Release\模板项目.exe) 与 Linker 的 OutputFile 属性值()不匹配。这可能导致项目生成不正确。若要更正此问题，请确保 $(OutDir)、$(TargetName) 和 $(TargetExt) 属性值与 %(Link.OutputFile) 中指定的值匹配。
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+D:\C++\VisualStudio\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(91): warning C4710: “bool __cdecl std::ios_base::good(void)const __ptr64”: 函数未内联
+D:\C++\VisualStudio\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(117): warning C4710: “void __cdecl std::basic_ostream<char,struct std::char_traits<char> >::_Osfx(void) __ptr64”: 函数未内联
+D:\C++\VisualStudio\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(102): warning C4710: “class std::basic_ostream<char,struct std::char_traits<char> > & __ptr64 __cdecl std::basic_ostream<char,struct std::char_traits<char> >::flush(void) __ptr64”: 函数未内联
+D:\C++\VisualStudio\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(103): warning C4710: “bool __cdecl std::ios_base::good(void)const __ptr64”: 函数未内联
+D:\C++\VisualStudio\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(784): warning C4710: “int __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::sputc(char) __ptr64”: 函数未内联
+D:\C++\VisualStudio\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(791): warning C4710: “__int64 __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::sputn(char const * __ptr64,__int64) __ptr64”: 函数未内联
+D:\C++\VisualStudio\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(797): warning C4710: “int __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::sputc(char) __ptr64”: 函数未内联
+D:\C++\VisualStudio\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(805): warning C4710: “void __cdecl std::basic_ios<char,struct std::char_traits<char> >::setstate(int,bool) __ptr64”: 函数未内联
+D:\C++\VisualStudio\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(808): warning C4710: “void __cdecl std::basic_ios<char,struct std::char_traits<char> >::setstate(int,bool) __ptr64”: 函数未内联
+  All 11 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  模板项目.vcxproj -> E:\编程\C++\模板项目\x64\Release\模板项目.exe
