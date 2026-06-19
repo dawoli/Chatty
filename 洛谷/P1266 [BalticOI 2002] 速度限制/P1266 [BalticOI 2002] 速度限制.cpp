@@ -1,69 +1,54 @@
 // Problem URL: https://www.luogu.com.cn/problem/P1266
+// Finish Time: 2026/6/19 14:19:22 AC
 // Start Time: 2026/6/19 10:10:43
 
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
-int n,m,d,dis[150],pre[150];
-bitset<150> vis;
-/*
-int speed(const int &u)
-{
-	if(!spd[u])return spd[u];
-	return speed(pre[u]);
-}
-*/
-struct Road
+int n,m,d;
+struct Edge
 {
 	int b,v,l;
-	double len(const int &vold)const
-	{
-		return (double)l/speed(vold);
-	}
-	int speed(const int &vold)const
-	{
-		if(v!=0)return v;
-		return vold;
-	}
 };
-vector<Road> e[150];
+vector<Edge> e[150];
+double dis[150][501];
+pair<int,int> pre[150][501];
+bool vis[150][501];
 struct Node
 {
-	int v,w,spd;
+	int u,spd;
+	double t;
 	bool operator<(const Node &_b)const
 	{
-		return w>_b.w;
+		return t>_b.t;
 	}
-}tmp;
-priority_queue<Node> q;
+};
 void Dijkstra()
 {
-	for(int i=0;i<n;i++)dis[i]=INT_MAX;
-	//for(int i=0;i<n;i++)pre[i]=0;
-	dis[0]=0;
-	pre[0]=INT_MIN;
-	tmp.v=0,tmp.w=0,tmp.spd=70;
-	q.push(tmp);
+	for(int i=0;i<n;i++)
+		for(int j=0;j<=500;j++)
+			dis[i][j]=1e18,vis[i][j]=false;
+	dis[0][70]=0;
+	priority_queue<Node> q;
+	q.push({0,70,0});
 	while(!q.empty())
 	{
-		tmp=q.top();
+		Node cur=q.top();
 		q.pop();
-		int u=tmp.v;
-		int spd=tmp.spd;
-		if(vis[u])continue;
-		vis[u]=true;
-		for(int i=0;i<e[u].size();i++)
+		int u=cur.u,spd=cur.spd;
+		if(vis[u][spd])continue;
+		vis[u][spd]=true;
+		for(Edge &edge:e[u])
 		{
-			int v=e[u][i].b;
-			//if(vis[v])continue;
-			double len=e[u][i].len(spd);
-			if(dis[u]+len<dis[v]/*&&fabs(dis[u]+len-dis[v]>1e-6)*/)
+			int v=edge.b;
+			int ns=edge.v==0?spd:edge.v;
+			double nt=dis[u][spd]+(double)edge.l/ns;
+			if(nt<dis[v][ns]-1e-12)
 			{
-				dis[v]=dis[u]+len;
-				pre[v]=u;
+				dis[v][ns]=nt;
+				pre[v][ns]={u,spd};
+				q.push({v,ns,nt});
 			}
-			tmp.v=v,tmp.w=dis[v],tmp.spd=e[u][i].speed(spd);
-			q.push(tmp);
 		}
 	}
 }
@@ -79,31 +64,22 @@ int main()
 		e[a].push_back({b,v,l});
 	}
 	Dijkstra();
+	int best_spd=0;
+	for(int s=1;s<=500;s++)
+		if(dis[d][s]<dis[d][best_spd])
+			best_spd=s;
 	vector<int> path;
-	for(int i=d;i!=INT_MIN;i=pre[i])
-		path.push_back(i);
-	reverse(path.begin(),path.end());
-	for(int i=0;i<path.size();i++)
+	int cur=d,spd=best_spd;
+	while(true)
 	{
-		cout<<path[i]<<' ';
+		path.push_back(cur);
+		if(cur==0)break;
+		auto p=pre[cur][spd];
+		cur=p.first;
+		spd=p.second;
 	}
+	reverse(path.begin(),path.end());
+	for(size_t i=0;i<path.size();i++)
+		cout<<path[i]<<" \n"[i==path.size()-1];
 	return 0;
 }
-/*
-6 15 1
-0 1 25 68
-0 2 30 50
-0 5 0 101
-1 2 70 77
-1 3 35 42
-2 0 0 22
-2 1 40 86
-2 3 0 23
-2 4 45 40
-3 1 64 14
-3 5 0 23
-4 1 95 8
-5 1 0 84
-5 2 90 64
-5 3 36 40
-*/
