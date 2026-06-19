@@ -1,12 +1,11 @@
 [
     {
-        "caretX": 14,
-        "caretY": 43,
+        "caretX": 1,
+        "caretY": 51,
         "filename": "E:/编程/C++/项目/Chatty/Chatty.cpp",
-        "focused": true,
-        "isOpen": true,
-        "left": 397,
-        "order": 0,
-        "top": 1860
+        "focused": false,
+        "isOpen": false,
+        "left": 0,
+        "top": 1974
     }
 ]

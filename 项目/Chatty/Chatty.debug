@@ -1,7 +1,15 @@
 {
     "breakpoints": [
+        {
+            "breakpoint_type": 0,
+            "condition": "",
+            "enabled": true,
+            "filename": "Chatty.cpp",
+            "line": 62,
+            "timestamp": "1756429717824"
+        }
     ],
-    "timestamp": "1756386823857",
+    "timestamp": "1756431109892",
     "watchvars": [
     ]
 }
