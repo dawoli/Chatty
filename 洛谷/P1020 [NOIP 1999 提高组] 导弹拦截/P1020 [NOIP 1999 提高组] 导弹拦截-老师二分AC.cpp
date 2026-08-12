@@ -1,4 +1,4 @@
-﻿#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int n=0,a[100001],f1[100001],ans1,f2[100001],ans2;//f1是最长不上升子序列长度，f2是最长上升子序列长度
 int main()

@@ -4,163 +4,162 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目概述
 
-这是一个个人的 C++ 算法竞赛训练仓库，包含大量 OJ 题目的解题代码和训练资料。
+这是一个个人的 C++ 算法竞赛训练仓库，包含大量 OJ 题目（洛谷 ~119 道、CSP-J/S、LeetCode、LibreOJ、YACS 等）的解题代码、竞赛模板和训练资料。
 
 ### 交互风格
 
-本项目采用 **Learning（学习型）** 输出风格。当你需要帮助时，我会：
-- 用 **提问的方式** 引导你思考问题，而不是直接给出答案
-- 在你卡住时提供 **提示和线索**，鼓励你自行推导出解法
-- 在你做对时给予确认，并追问更深层的理解
-- 优先帮你理清思路，再辅助实现代码
+本项目采用 **Learning（学习型）** 输出风格（已在 `.claude/settings.local.json` 中配置），应通过提问/提示引导用户思考，鼓励自主推导。
 
-## 构建和运行
+## 快速参考
 
-### 单个文件编译
-
-项目使用 Red Panda C++（MinGW64）作为编译器。
-
-**快速编译**（在 VS Code 中）:
-- 按 `Ctrl + F5` 运行默认的 C/C++: g++ 任务
-- 或在终端中使用：
-  ```bash
-  g++ -O2 -std=c++14 -Wall -Wextra -o main.exe main.cpp
-  ```
-
-**带调试信息的编译**:
-```bash
-g++ -g -std=c++14 -o debug.exe main.cpp
-```
-
-**编译时加地址/未定义行为检测**（tasks.json 中已配置）:
-```bash
-g++ -g -std=c++14 -fsanitize=address,undefined,leak -o main.exe main.cpp
-```
-
-### 运行程序
+### 单文件编译
 
 ```bash
-./main.exe
-# 或在 Windows 下
-main.exe
+g++ -O2 -std=c++14 -Wall -Wextra -o main.exe main.cpp
 ```
 
-### 洛谷题目本地测试
+### 调试编译（含 sanitizer）
 
-洛谷题目目录结构示例：
-```
-洛谷/B3631 单向链表/
-  ├── B3631 单向链表.cpp
-  └── B3631 单向链表.exe
-```
-
-编译并运行特定洛谷题目：
 ```bash
-cd "洛谷/B3631 单向链表/"
-g++ -O2 -std=c++14 B3631 单向链表.cpp -o B3631 单向链表.exe
-./B3631 单向链表.exe
+g++ -O0 -g -std=c++14 -fsanitize=address,undefined,leak -o main.exe main.cpp
 ```
 
-## 编码规范
+### VS Code 快捷键
 
-### 代码格式
+- `F5`：调试运行（使用 tasks.json 中的带调试编译任务）
+- `Ctrl+F5`：非调试运行
+- 编译器路径：`D:\C++\RedPanda.C++\mingw64\bin\g++.exe`
 
-项目使用 `.clang-format` 配置文件（基于 LLVM 风格）：
-- 缩进：4 个空格
-- 使用 Tab 进行缩进
-- 行宽：0（不限制）
-- 大括号风格：Custom（类、命名空间、函数等后换行）
+### 用测试数据验证
 
-### 代码风格
+洛谷部分题目文件夹内包含 `.in` / `.out` 测试数据（如 `P1941 飞扬的小鸟/`），可用重定向运行：
 
-- 使用 `#include <bits/stdc++.h>` 作为通用头文件
-- 使用 `using namespace std;`
-- C++ 标准使用 C++14
-- 编译时开启 `-O2` 优化
-- 启用 `-Wall -Wextra -pedantic` 警告
-
-### 快速 IO
-
-所有竞赛题目代码应包含快速 IO 模板：
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long int ll;
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    // 你的代码
-    return 0;
-}
+```bash
+g++ -O2 -std=c++14 "P1941 [NOIP 2014 提高组] 飞扬的小鸟.cpp" -o "P1941.exe"
+./P1941.exe < "P1941_16.in"
 ```
-
-## 代码库结构
-
-### 题目仓库
-
-- **洛谷 (`/洛谷/`)** - 约 102 道洛谷题目，按题目编号或标签组织
-  - 结构：`洛谷/{题目编号或名称}/{题目编号}.cpp`
-  - 通常包含多个版本的实现（不同算法思路、不同语言生成等）
-
-- **CSPJS (`/CSPJS/`)** - CSP 竞赛题目
-  - 结构：`CSPJS/{年份}/{组别}/answers/{题号}/题目名/题目名.cpp`
-  - 组别：`J` (Junior, 初级), `S` (Senior, 高级)
-
-- **LeetCode (`/LeetCode/`)** - LeetCode 题目
-  - 目录结构按题号或分类组织
-
-- **LibreOJ (`/LibreOJ/`)** - LibreOJ 题目
-  - 示例：`LibreOJ/#5514 「PA 2019 Final」Floyd-Warshall/`
-
-- **YACS (`/yacs/`)** - 青少年算法竞赛题目
-  - 包含上海市青少年算法竞赛的网络赛和现场赛
-
-### 主题训练 (`/各类竞赛题目/` 和 `/oi-templates/`)
-
-- **按主题分类**：`深搜/`、`排序/`、`数组/`、`字符串/`、`指针/`、`函数/`、`二维数组/` 等
-- **算法模板** (`/oi-templates/`)：
-  - `Cpp_template.cpp` - 基础单文件模板（快速 IO）
-  - `dsu.cpp` - 并查集（带路径压缩与按秩合并）
-  - `bit.cpp` - 树状数组（Fenwick Tree）
-  - `segtree_lazy.cpp` - 线段树（懒惰标记）
-  - `monotonic_queue.cpp` - 单调队列
-  - `lca_binary_lifting.cpp` - 二进制倍增 LCA
-  - `cht.cpp` - 斜率优化（Convex Hull Trick）
-
-### VS Code 配置
-
-- **tasks.json** - 定义了多个编译任务（单文件调试、非调试、带检测等）
-- **settings.json** - 配置了 C/C++ 自动补全、文件关联等
-- **launch.json** - 调试配置
-- **c_cpp_properties.json** - IntelliSense 配置
-
-## 开发工作流
-
-### 添加新题目
-
-1. 在对应 OJ 目录下创建题目文件夹
-2. 添加 `题目名.cpp` 源文件
-3. 编译并测试：`g++ -O2 -std=c++14 题目名.cpp -o 题目名.exe`
-4. 运行测试：`./题目名.exe`
 
 ### 使用模板
 
-- 直接在题目文件中 `#include "../oi-templates/模板.cpp"`（如从 `洛谷/` 目录）
-- 或复制模板内容到题目文件中
-- 模板包含详细的使用说明和复杂度注释
+```cpp
+#include "../oi-templates/include/dsu.hpp"   // 用 .hpp 头文件
+// 或直接复制 oi-templates/ 下的 .cpp 模板
+```
 
-### 调试
+### 新建题目
 
-使用 VS Code 的调试功能：
-- F5 启动调试（会使用 tasks.json 中带 `-g` 的任务）
-- 设置断点后逐步执行
-- 可使用性能分析工具（`-pg` 标志）
+1. 在对应 OJ 目录下创建文件夹
+2. 从 `oi-templates/Cpp_template.cpp` 复制快速 IO 模板
+3. 编写解题代码
+4. 编译测试
 
-## 关键注意事项
+## 代码规范
 
-- 所有代码使用 C++14 标准
+- **标准**：C++14，`#include <bits/stdc++.h>` + `using namespace std;` + `typedef long long ll;`
+- **快速 IO**：`ios::sync_with_stdio(false); cin.tie(nullptr);`
+- **码风**：LLVM 风格 + Allman 大括号（函数/类/命名空间后换行），Tab 缩进 4 格，snake_case 命名
+- **clang-format**：`.clang-format` 已配置（Custom BraceWrapping，ColumnLimit: 0，UseTab: Always）
+- **无指针**：优先用 C 风格 + C++14 语法特性，避免指针
+- **代码简洁**：只保留行首 `Problem URL` / `Start Time` / `Finish Time` / `Category` 注释，无多余注释和 AI 味
+
+## 目录结构
+
+```
+/
+├── 洛谷/                       # ~119 道洛谷题目
+│   ├── P1525 [NOIP 2010 提高组] 关押罪犯/
+│   ├── P1941 [NOIP 2014 提高组] 飞扬的小鸟/   # 包含 .in/.out 测试数据
+│   └── 比赛/                    # 洛谷比赛题目
+│
+├── CSPJS/                      # CSP 竞赛（含真题、模拟题）
+│   ├── 2024/
+│   │   ├── 2024CSPJ/           # J 组真题
+│   │   ├── 2024CSPS/           # S 组真题
+│   │   └── 信息邹老师发布的/    # 培训资料 + answers/
+│   └── 2025/
+│       ├── J/                  # J 组（含 9_CSP-J 真题 + answers/ 各选手解答）
+│       └── S/                  # S 组（含 SH-Senior/answers/ 各选手解答）
+│
+├── oi-templates/               # 常用算法模板
+│   ├── Cpp_template.cpp        # 快速 IO 起点模板
+│   ├── dsu.cpp                 # 并查集
+│   ├── bit.cpp                 # 树状数组
+│   ├── segtree_lazy.cpp        # 线段树（懒惰标记）
+│   ├── monotonic_queue.cpp     # 单调队列
+│   ├── lca_binary_lifting.cpp  # LCA 倍增
+│   ├── cht.cpp                 # 斜率优化
+│   ├── include/                # .hpp 头文件版本，可 #include 使用
+│   └── tests/                  # 各模板的单元测试
+│
+├── yacs/                       # 上海市青少年算法竞赛
+│   ├── 2026年4月月赛/
+│   ├── 2026年5月月赛/
+│   └── 第六届.../
+│
+├── AC MX/                      # ACMX（洛谷团队赛）
+├── Houston/                    # Houston 题目
+├── LeetCode/                   # LeetCode 题解
+├── LibreOJ/                    # LibreOJ 题目
+├── 乐动创想/                   # 培训机构课程资料
+│   └── 课程回放/               # 课程回放资料
+│
+├── 错题本/                      # 错题复盘记录
+│   ├── 客观题/                  # GESP 等选择/判断题错题
+│   └── 主观题/                  # 算法编程题错题（Markdown，含算法标签+题号）
+│
+├── .vscode/                    # VS Code 工程配置
+│   ├── tasks.json              # 编译任务（调试/非调试/sanitizer）
+│   ├── launch.json             # 调试配置（gdb）
+│   ├── settings.json           # C++ 插件设置、文件关联
+│   └── testSets.json           # 测试集配置
+│
+├── .claude/                    # Claude Code 配置
+├── .agent.md                   # OI 助手 persona 定义
+├── AGENTS.md                   # 工作区代理指令
+├── CLAUDE.md                   # 本文件（仓库规范）
+├── .clang-format               # 格式化配置（LLVM Allman 变体）
+└── Cpp_template.cpp            # 根目录的快速 IO 模板
+```
+
+## 模板体系
+
+`oi-templates/` 下有双版本模板（`.cpp` 可直接复制提交，`.hpp` 可用 `#include` 引用）：
+
+| 模板 | 说明 |
+|------|------|
+| `Cpp_template` | 快速 IO + main 骨架 |
+| `dsu` | 并查集，路径压缩 + 按秩合并 |
+| `bit` | 树状数组，点加 + 前缀/区间和 |
+| `segtree_lazy` | 线段树，区间加 + 区间求和 |
+| `monotonic_queue` | 单调队列，滑动窗口最值 |
+| `lca_binary_lifting` | LCA 二进制倍增 |
+| `cht` | 斜率优化，单调插入/查询 |
+
+## 错题复盘
+
+每道题 AC 后，在代码末尾追加块注释总结经验，同时在 `错题本/主观题/` 下写入对应的 Markdown 复盘记录。
+
+### 代码末尾块注释格式
+
+```cpp
+/*
+ * 经验总结：
+ * - 容易错的地方：
+ * - 关键结论/技巧：
+ * - 复杂度：
+ */
+```
+
+### 错题本 Markdown 命名规范
+
+```
+错题本/主观题/<算法标签> <题号> <题目名>.md
+```
+
+内容应包含：题目链接、算法思路、踩坑点、关键结论，方便复习检索。
+
+- Allman 大括号（函数/类/命名空间/控制语句全换行），**但 `else`/`catch`/`while`（do-while 的）不换行**
 - 竞赛代码优先考虑时间/空间效率和边界情况
-- 代码风格简洁、易于调试且易于粘贴到评测系统，除了了开头的Problem URL,Start Time,Finish Time,Category以外，不应包含其他注释，变量名尽量短，代码避免有AI味
-- 注意洛谷题目通常需要在标准输入/标准输出上运行
-- 代码应处理输入输出超时问题（快速 IO 已包含）
+- **不**在代码中添加题解或算法解释；代码即答案
+- 洛谷题目运行于标准输入/输出，用 `.in` / `.out` 文件重定向测试
+- CSP 赛场答案按选手编号组织在 `answers/` 下，目录名如 `SH-J00001`、`SH-S00001`
