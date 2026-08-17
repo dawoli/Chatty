@@ -1,14 +1,14 @@
 {
   "configurations": [
     {
-      "compilerPath": "D:/C++/RedPanda.C++/mingw64/bin/gcc.exe",
-      "cppStandard": "${default}",
+      "compilerPath": "D:/C++/RedPanda.C++/mingw64/bin/g++.exe",
+      "cppStandard": "c++14",
       "includePath": [
         "${workspaceFolder}/**"
       ],
-      "name": "windows-gcc-x64",
+      "name": "windows-g++-x64",
       "intelliSenseMode": "windows-gcc-x64",
-      "cStandard": "${default}"
+      "cStandard": "c11"
     }
   ],
   "version": 4
