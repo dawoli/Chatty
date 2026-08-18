@@ -6,8 +6,8 @@ AccessModifierOffset: -4
 AlignConsecutiveAssignments: true
 AlignConsecutiveDeclarations: true
 AlignOperands: true
-AlignTrailingComments: false
-AllowShortBlocksOnASingleLine: false
+AlignTrailingComments: true
+AllowShortBlocksOnASingleLine: true
 AllowShortFunctionsOnASingleLine: None
 AlwaysBreakAfterDefinitionReturnType: false
 AlwaysBreakTemplateDeclarations: true
