@@ -22,7 +22,7 @@ struct PLAYER {
     int direct;
 } p1,p2;
 int map[1005][1005];
-int abs(int x) {
+int _abs(int x) {
     if(x < 0) return -x;
     return x;
 }
@@ -242,7 +242,7 @@ void clipmove() {
     int t = sys.wMilliseconds + sys.wSecond * 60 + sys.wHour * 3600;
     for(int i = 1; i <= cnt; i++) {
         if(clip[i].flag) continue;
-        if(abs(clip[i].start - t) > 50) {
+        if(_abs(clip[i].start - t) > 50) {
             clip[i].start = t;
             int x = clip[i].x;
             int y = clip[i].y;
