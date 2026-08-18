@@ -1,5 +1,6 @@
 #include<iostream>
 #include<queue>
+#include<cmath>
 using namespace std;
 inline int read(){
 	register char c = getchar();
@@ -24,9 +25,9 @@ inline void write(int x){
 	}
 	putchar(x % 10 + 48);
 }
-inline int ceil(double x){
-	return int(x) == x ? int(x) : int(x) + 1;
-}
+// inline int ceil(double x){
+// 	return int(x) == x ? int(x) : int(x) + 1;
+// }
 struct node{
 	int step , s , v;
 }t;
