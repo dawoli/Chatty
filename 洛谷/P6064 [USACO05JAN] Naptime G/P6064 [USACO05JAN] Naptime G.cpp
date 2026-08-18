@@ -1,8 +1,8 @@
 // Problem URL: https://www.luogu.com.cn/problem/P6064
+// Finish Time: 2026/8/17 复盘：WA 根因是倍长数组重复选同一小时（思路缺陷），改用断环分类两遍 DP 可 AC
 // Finish Time: 2026/8/14 12:07:45 WA/RE 63pts
 // Finish Time: 2026/8/14 11:37:30 WA/RE 14pts
 // Start Time: 2026/8/14 11:20:36
-// Finish Time: 2026/8/17 复盘：WA 根因是倍长数组重复选同一小时（思路缺陷），改用断环分类两遍 DP 可 AC
 
 #include <bits/stdc++.h>
 #define int int
