@@ -2,10 +2,10 @@
 using namespace std;
 const int N=500009;
 int n,k,a[N],ans,x,y,z,s[N],flag=1;
-int abs(int x){
-	if(x>=0) return x;
-	else return -x;
-}
+// int abs(int x){
+// 	if(x>=0) return x;
+// 	else return -x;
+// }
 int main(){
 //	freopen("xor.in","r",stdin);
 //	freopen("xor.out","w",stdout);
