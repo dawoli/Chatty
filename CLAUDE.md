@@ -18,10 +18,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 g++ -O2 -std=c++14 -Wall -Wextra -o main.exe main.cpp
 ```
 
-### 调试编译（含 sanitizer）
+### 调试编译）
 
 ```bash
-g++ -O0 -g -std=c++14 -fsanitize=address,undefined,leak -o main.exe main.cpp
+g++ -O0 -g -std=c++14 -Wall -Wextra -o main.exe main.cpp
 ```
 
 ### VS Code 快捷键
@@ -41,10 +41,7 @@ g++ -O2 -std=c++14 "P1941 [NOIP 2014 提高组] 飞扬的小鸟.cpp" -o "P1941.e
 
 ### 使用模板
 
-```cpp
-#include "../oi-templates/include/dsu.hpp"   // 用 .hpp 头文件
-// 或直接复制 oi-templates/ 下的 .cpp 模板
-```
+直接复制 oi-templates/ 下的 .cpp 模板
 
 ### 新建题目
 
@@ -55,12 +52,12 @@ g++ -O2 -std=c++14 "P1941 [NOIP 2014 提高组] 飞扬的小鸟.cpp" -o "P1941.e
 
 ## 代码规范
 
-- **标准**：C++14，`#include <bits/stdc++.h>` + `using namespace std;` + `typedef long long ll;`
+- **标准**：C++14，`#include <bits/stdc++.h>` + `#define int int` + `#define endl '\n'` + `using namespace std;` + `typedef long long ll;` + `signed main()`
 - **快速 IO**：`ios::sync_with_stdio(false); cin.tie(nullptr);`
-- **码风**：LLVM 风格 + Allman 大括号（函数/类/命名空间后换行），Tab 缩进 4 格，snake_case 命名
-- **clang-format**：`.clang-format` 已配置（Custom BraceWrapping，ColumnLimit: 0，UseTab: Always）
+- **码风**：LLVM 风格 + Allman 大括号（函数/类/命名空间后换行），Tab 缩进 4 格，snake_case 命名，1-based
+- **clang-format**：`.clang-format` 已配置（UseTab: Always）
 - **无指针**：优先用 C 风格 + C++14 语法特性，避免指针
-- **代码简洁**：只保留行首 `Problem URL` / `Start Time` / `Finish Time` / `Category` 注释，无多余注释和 AI 味
+- **代码简洁**：只保留行首 `Problem URL` / `Start Time` / `Finish Time` / `Category` 注释，无 AI 味，可以有适当注释
 
 ## 目录结构
 
@@ -81,7 +78,6 @@ g++ -O2 -std=c++14 "P1941 [NOIP 2014 提高组] 飞扬的小鸟.cpp" -o "P1941.e
 │       └── S/                  # S 组（含 SH-Senior/answers/ 各选手解答）
 │
 ├── oi-templates/               # 常用算法模板
-│   ├── Cpp_template.cpp        # 快速 IO 起点模板
 │   ├── dsu.cpp                 # 并查集
 │   ├── bit.cpp                 # 树状数组
 │   ├── segtree_lazy.cpp        # 线段树（懒惰标记）
@@ -96,8 +92,6 @@ g++ -O2 -std=c++14 "P1941 [NOIP 2014 提高组] 飞扬的小鸟.cpp" -o "P1941.e
 │   ├── 2026年5月月赛/
 │   └── 第六届.../
 │
-├── AC MX/                      # ACMX（洛谷团队赛）
-├── Houston/                    # Houston 题目
 ├── LeetCode/                   # LeetCode 题解
 ├── LibreOJ/                    # LibreOJ 题目
 ├── 乐动创想/                   # 培训机构课程资料
@@ -108,7 +102,7 @@ g++ -O2 -std=c++14 "P1941 [NOIP 2014 提高组] 飞扬的小鸟.cpp" -o "P1941.e
 │   └── 主观题/                  # 算法编程题错题（Markdown，含算法标签+题号）
 │
 ├── .vscode/                    # VS Code 工程配置
-│   ├── tasks.json              # 编译任务（调试/非调试/sanitizer）
+│   ├── tasks.json              # 编译任务（调试/非调试）
 │   ├── launch.json             # 调试配置（gdb）
 │   ├── settings.json           # C++ 插件设置、文件关联
 │   └── testSets.json           # 测试集配置
@@ -160,6 +154,6 @@ g++ -O2 -std=c++14 "P1941 [NOIP 2014 提高组] 飞扬的小鸟.cpp" -o "P1941.e
 
 - Allman 大括号（函数/类/命名空间/控制语句全换行），**但 `else`/`catch`/`while`（do-while 的）不换行**
 - 竞赛代码优先考虑时间/空间效率和边界情况
-- **不**在代码中添加题解或算法解释；代码即答案
+- 可以在代码中**适当**添加题解或算法解释,不要过多
 - 洛谷题目运行于标准输入/输出，用 `.in` / `.out` 文件重定向测试
 - CSP 赛场答案按选手编号组织在 `answers/` 下，目录名如 `SH-J00001`、`SH-S00001`
