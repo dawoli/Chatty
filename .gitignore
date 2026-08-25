@@ -1,4 +1,9 @@
 .metadata/
 build/
 .oicpp/
-.claude/worktrees/
+.claude/
+.vscode/
+.ghostcode/
+.cline/
+.fleet/
+.idea/
