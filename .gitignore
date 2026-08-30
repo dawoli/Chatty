@@ -1,5 +1,7 @@
 .metadata/
 build/
+gmon.out
+*.exe
 .oicpp/
 .claude/
 .vscode/
