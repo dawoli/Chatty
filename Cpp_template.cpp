@@ -2,7 +2,8 @@
 #define int int
 #define endl '\n'
 using namespace std;
-typedef long long ll;
+typedef long long	   ll;
+typedef pair<int, int> pii;
 
 
 signed main()
