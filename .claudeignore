@@ -1,0 +1,41 @@
+# ===== Claude Code 忽略规则 =====
+# 为 OI 算法仓库定制：压缩上下文，避免探索时读入无价值的二进制/大资源文件。
+# 语法与 .gitignore 相同。源码（*.cpp *.hpp *.md *.py）和 .in/.out 测试数据绝不忽略。
+
+# ---- 版本控制内部 ----
+.git/
+
+# ---- 编译产物与构建目录 ----
+*.o
+*.obj
+*.class
+*.jar
+build/
+cmake-build-release/
+.gradle/
+__pycache__/
+*.pyc
+
+# ---- 临时 / 编辑器残留 ----
+*.swp
+*.swo
+*.tmp
+*~
+*.bak
+*.bak-*
+*.log
+
+# 注：*.exe 刻意不忽略（gdb/调试依赖），*.pdf/png/zip 等二进制资源也保留（可用 Python 读取）。
+
+# ---- 工具 / 编辑器隐藏目录（Claude 无需要读）----
+.idea/
+.fleet/
+.ghostcode/
+.cline/
+.metadata/
+.oicpp/
+.gradle/
+.evolver/
+
+# 注：.claude/ 与 .vscode/ 刻意不忽略——前者含 agents/skills 配置，后者含编译调试任务，
+#     对 Claude 理解工程有实际价值。若需排除，按用途放行后再补。
