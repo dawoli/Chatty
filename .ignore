@@ -1,0 +1,57 @@
+# ===== 忽略规则（Claude Code / ripgrep 共用）=====
+# ⚠️ 文件名必须是 .ignore 或 .rgignore —— 这是 ripgrep 的约定，Claude Code 的文件索引与
+#    Grep 工具都读它。原先的 .claudeignore 是**无效**的：Claude Code 不识别该文件名
+#    （2026-10-06 从 CLI 二进制 claude.exe 中检索，claudeignore 出现 0 次）。
+# 语法与 .gitignore 相同：注释必须独占一行，行尾 # 会被当成模式的一部分。
+# 源码（*.cpp *.hpp *.md *.py）和 .in/.out 测试数据绝不忽略。
+
+# ---- 版本控制内部 ----
+.git/
+
+# ---- 编译产物与构建目录 ----
+*.o
+*.obj
+*.class
+*.jar
+build/
+cmake-build-release/
+.gradle/
+__pycache__/
+*.pyc
+
+# ---- 系统 / 编辑器垃圾（.DS_Store 本仓库有 1300 个）----
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# ---- 临时 / 编辑器残留 ----
+*.swp
+*.swo
+*.tmp
+*~
+*.bak
+*.bak-*
+*.log
+
+# ---- 本工作区特有的大块头 ----
+# 历史 worktree，每个都含一份完整的仓库副本（另见 git worktree list）
+.claude/worktrees/
+# cpptips.db，12 MB 的索引库
+.vscode/db/
+
+# 注：*.exe 刻意不忽略（gdb/调试依赖），*.pdf / *.png / *.jpg 等二进制资源也保留
+#     （可用 Python 或 Read 工具读取）。
+
+# ---- 工具 / 编辑器隐藏目录（Claude 无需要读）----
+.idea/
+.fleet/
+.ghostcode/
+.cline/
+.metadata/
+.oicpp/
+.cursor/
+.evolver/
+
+# 注：.claude/ 与 .vscode/ 整体刻意不忽略（只排除上面单列的 worktrees/ 与 db/）
+#     ——前者含 agents/skills 配置，后者含编译调试任务，对 Claude 理解工程有实际价值。
