@@ -3,6 +3,7 @@ build/
 gmon.out
 *.exe
 *.o
+.DS_Store
 .oicpp/
 .claude/
 .vscode/
