@@ -1,6 +1,6 @@
 #include <iostream>
 #include <Windows.h>
-#pragma comment(lib,"winmm.lib")
+#pragma comment(lib,"winmm.lib")// MSVC 专用，MinGW/g++ 不认，需在编译命令加 -lwinmm
 using namespace std;
 enum Scale
 {
@@ -74,6 +74,8 @@ void Wind()
             Sleep(350);
             continue;
         }
+        if (i == 400) { continue; }// MIDDLE_SPEED，速度标记，不是音符
+        if (i == 2) { Sleep(sleep); continue; }// 裸整数是控制码，此处按休止处理，保持原节奏
         // if (i == 900) volume += 100;
         voice = (volume << 16) + ((i) << 8) + 0x90;
         midiOutShortMsg(handle, voice);
