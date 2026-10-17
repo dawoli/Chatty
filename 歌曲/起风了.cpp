@@ -1,6 +1,8 @@
 #include <iostream>
-#include <Windows.h>
-#pragma comment(lib,"winmm.lib")// MSVC 专用，MinGW/g++ 不认，需在编译命令加 -lwinmm
+#include <windows.h>
+#ifdef _MSC_VER
+#pragma comment(lib, "winmm.lib")// MSVC 专用；MinGW/g++ 不认，需在编译命令加 -lwinmm
+#endif
 using namespace std;
 enum Scale
 {
@@ -26,7 +28,12 @@ enum Voice
 void Wind()
 {
     HMIDIOUT handle;
-    midiOutOpen(&handle, 0, 0, 0, CALLBACK_NULL);
+    if (midiOutOpen(&handle, 0, 0, 0, CALLBACK_NULL) != MMSYSERR_NOERROR)
+    {
+        // 故意用英文：源文件是 UTF-8，中文串在 GBK 控制台（Win7 默认 936）会乱码
+        cout << "Cannot open MIDI device 0. Make sure a MIDI synthesizer is installed." << endl;
+        return;
+    }
     // midiOutShortMsg(handle, 2 << 8 | 0xC0);
     int volume = 0x7f;
     int voice = 0x0;
