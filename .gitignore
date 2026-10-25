@@ -28,3 +28,9 @@ gmon.out
 书籍/Primer c++ 第5版_可搜索.pdf
 C++ Primer 第五版.zip
 C++ Primer 第五版/
+
+# 评测数据包只入库原始 zip，解压目录留在本地
+CSPJS/2025/S/down/
+洛谷/P17723 \[SCP-S 2026\] 函数 func/arbiter/
+洛谷/P17723 \[SCP-S 2026\] 函数 func/func/
+
